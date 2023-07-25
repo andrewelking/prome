@@ -12,6 +12,7 @@ import CardsGrid from '@components/cards-grid/CardsGrid';
 import CardSite from '@components/card-site/CardSite';
 import Layout from '@components/layout/Layout';
 import { inconsolata } from 'public/fonts/fonts';
+import { SiteProps } from 'src/type';
 
 export const getServerSideProps = async (
   ctx: GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse }
@@ -27,9 +28,13 @@ export const getServerSideProps = async (
   };
 };
 
-const IndexPage: NextPageWithLayout = (data) => {
+type FavoriteSitesProps = {
+  sites: SiteProps
+}
+
+const IndexPage: NextPageWithLayout = (data: any) => {
   const bookmarks: any[] = [];
-  data?.data.map((site) => bookmarks.push(site.sites));
+  data?.data.map((site: FavoriteSitesProps) => bookmarks.push(site.sites));
 
   const cards = bookmarks?.map((site) => {
     return (

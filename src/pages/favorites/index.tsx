@@ -28,9 +28,13 @@ export const getServerSideProps = async (
   };
 };
 
-const IndexPage: NextPageWithLayout = (data) => {
+type FavoriteSitesProps = {
+  sites: SiteProps
+}
+
+const IndexPage: NextPageWithLayout = (data: any) => {
   const favorites: any[] = [];
-  data?.data.map((site: SiteProps) => favorites.push(site.sites));
+  data?.data.map((site: FavoriteSitesProps) => favorites.push(site!.sites));
 
   const cards = favorites?.map((site) => {
     return (
