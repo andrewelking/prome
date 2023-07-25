@@ -1,15 +1,14 @@
-import {
-  Center,
-  Group,
-  Loader,
-  Stack,
-  Text,
-  TextInput,
-} from '@mantine/core';
+import { Center, Group, Loader, Stack, Text, TextInput } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import { NavbarContext, NextPageWithLayout } from './_app';
-import { ChangeEvent, ReactElement, useMemo, useState, useContext } from 'react';
+import {
+  ChangeEvent,
+  ReactElement,
+  useMemo,
+  useState,
+  useContext,
+} from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 
@@ -18,7 +17,7 @@ import CardSite from '@components/card-site/CardSite';
 import Layout from '@components/layout/Layout';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
-import { useStyles } from './styles/index_page';
+import { useStyles } from '../styles/index_page';
 
 const PAGE_COUNT = 20;
 
@@ -53,7 +52,7 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[] }> = ({
 }) => {
   const { classes } = useStyles();
 
-  const { isOpened } = useContext(NavbarContext)
+  const { isOpened } = useContext(NavbarContext);
 
   const supabase = createPagesBrowserClient();
 

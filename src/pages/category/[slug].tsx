@@ -17,7 +17,7 @@ import Layout from '@components/layout/Layout';
 import supabase from 'src/lib/supabaseClient';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
-import { useStyles } from '../styles/category';
+import { useStyles } from '../../styles/category';
 
 const PAGE_COUNT = 20;
 

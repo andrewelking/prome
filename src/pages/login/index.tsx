@@ -12,7 +12,7 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 
 import AuthenticationForm from '@components/auth/Auth';
 import MainHeader from '@components/main-header/MainHeader';
-import { useStyles } from '../styles/login';
+import { useStyles } from '../../styles/login';
 import { plusJakartaSans } from 'public/fonts/fonts';
 
 const links = [
@@ -22,11 +22,13 @@ const links = [
   },
 ];
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse; }) => {
-  const supabase = createPagesServerClient(ctx)
+export const getServerSideProps = async (
+  ctx: GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse }
+) => {
+  const supabase = createPagesServerClient(ctx);
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await supabase.auth.getSession();
 
   if (session)
     return {
@@ -34,14 +36,14 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext | { req:
         destination: '/',
         permanent: false,
       },
-    }
+    };
 
   return {
     props: {
       initialSession: session,
     },
-  }
-}
+  };
+};
 
 export default function Login() {
   const { classes, cx } = useStyles();
