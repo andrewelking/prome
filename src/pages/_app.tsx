@@ -43,7 +43,7 @@ export default function App(props: AppPropsWithLayout) {
         <title>Prome - Tổng hợp website cho phát triển và thiết kế web</title>
         <link
           rel="shortcut icon"
-          href="/favicon.png"
+          href="/assets/favicon.png"
         />
         <meta
           name="viewport"
