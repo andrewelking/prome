@@ -12,8 +12,7 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 
 import AuthenticationForm from '@components/auth/Auth';
 import MainHeader from '@components/main-header/MainHeader';
-import { useStyles } from './styles';
-import supabase from '../../lib/supabaseClient';
+import { useStyles } from '../styles/login';
 import { plusJakartaSans } from 'public/fonts/fonts';
 
 const links = [

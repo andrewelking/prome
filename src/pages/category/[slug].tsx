@@ -3,6 +3,7 @@ import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import { NextPageWithLayout } from '../_app';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ChangeEvent, ReactElement, useEffect, useMemo, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -16,8 +17,7 @@ import Layout from '@components/layout/Layout';
 import supabase from 'src/lib/supabaseClient';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
-import { useStyles } from './styles';
-import Head from 'next/head';
+import { useStyles } from '../styles/category';
 
 const PAGE_COUNT = 20;
 

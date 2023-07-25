@@ -18,7 +18,7 @@ import CardSite from '@components/card-site/CardSite';
 import Layout from '@components/layout/Layout';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
-import { useStyles } from './styles';
+import { useStyles } from './styles/index_page';
 
 const PAGE_COUNT = 20;
 
