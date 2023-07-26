@@ -7,6 +7,7 @@ import {
 import { NextPageWithLayout } from '../_app';
 import { ReactElement } from 'react';
 import { createPagesServerClient } from '@supabase/auth-helpers-nextjs';
+import Head from 'next/head';
 
 import CardsGrid from '@components/cards-grid/CardsGrid';
 import CardSite from '@components/card-site/CardSite';
@@ -29,8 +30,8 @@ export const getServerSideProps = async (
 };
 
 type FavoriteSitesProps = {
-  sites: SiteProps
-}
+  sites: SiteProps;
+};
 
 const IndexPage: NextPageWithLayout = (data: any) => {
   const favorites: any[] = [];
@@ -47,6 +48,9 @@ const IndexPage: NextPageWithLayout = (data: any) => {
 
   return (
     <>
+      <Head>
+        <title>Favorites</title>
+      </Head>
       <Stack mb="xl">
         <Text
           size={24}

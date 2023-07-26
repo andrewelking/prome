@@ -18,7 +18,6 @@ import Layout from '@components/layout/Layout';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
 import { useStyles } from '../styles/index_page';
-import Head from 'next/head';
 
 const PAGE_COUNT = 20;
 
@@ -113,9 +112,6 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[] }> = ({
 
   return (
     <>
-    <Head>
-      <title>Favorites</title>
-    </Head>
       <Stack
         mb="xl"
         h="100%">
