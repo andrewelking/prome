@@ -52,7 +52,6 @@ const Post = ({
   markdown,
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(markdown.parent);
   return (
     <>
       <Head>

@@ -11,7 +11,7 @@ export const useStyles = createStyles((theme) => ({
     transition: 'transform 150ms ease, box-shadow 150ms ease',
 
     minWidth: rem(330),
-    minHeight: rem(550),
+    minHeight: rem(500),
     maxHeight: rem(550),
     borderRadius: theme.radius.md,
 
