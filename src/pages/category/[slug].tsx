@@ -152,9 +152,9 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[]; slug: string }> = ({
             {category!.label} ({cards.length})
           </Text>
           <TextInput
-            value={query}
             placeholder={`Try "ec"`}
             size="sm"
+            variant="filled"
             icon={<IconSearch size={16} />}
             onChange={handleQueryChange}
           />
