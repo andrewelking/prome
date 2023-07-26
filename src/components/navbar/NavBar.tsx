@@ -165,24 +165,24 @@ export default function NavBar({ opened }: { opened: boolean }) {
 
     const linkStyle = isActive
       ? {
-          backgroundColor: theme.colors.cyan[6],
-          color: theme.colors.dark[6],
+          backgroundColor: theme.colors.cyan[9],
+          color: theme.colors.gray[0],
         }
       : /\brouter.asPath\b/.test(
           category.label.toLowerCase().replace(/\s+/g, '')
         )
       ? {
-          backgroundColor: theme.colors.cyan[6],
-          color: theme.colors.dark[6],
+          backgroundColor: theme.colors.cyan[9],
+          color: theme.colors.gray[0],
         }
       : undefined;
 
     const iconStyle = isActive
-      ? { color: theme.colors.dark[6] }
+      ? { color: theme.colors.gray[0] }
       : /\brouter.asPath\b/.test(
           category.label.toLowerCase().replace(/\s+/g, '')
         )
-      ? { color: theme.colors.dark[6] }
+      ? { color: theme.colors.gray[0] }
       : undefined;
 
     const textClassName = isOpened

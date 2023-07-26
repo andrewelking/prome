@@ -81,6 +81,7 @@ export default function App(props: AppPropsWithLayout) {
         theme={{
           colorScheme: 'dark',
           primaryColor: 'cyan',
+          primaryShade: 9,
           globalStyles: (theme) => ({
             '&::-webkit-scrollbar': {
               backgroundColor: theme.colors.dark[7],
