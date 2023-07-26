@@ -20,5 +20,5 @@ export default function RouterTransition() {
     };
   }, [router.asPath, router.events]);
 
-  return <NavigationProgress color='cyan' autoReset={true} />;
+  return <NavigationProgress color='cyan' autoReset={true} progressLabel="Loading Page"/>;
 }

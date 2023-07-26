@@ -51,6 +51,11 @@ export default function App(props: AppPropsWithLayout) {
     <>
       <Head>
         <title>Prome</title>
+        <meta
+          name={'description'}
+          title={'description'}
+          content={'Tổng hợp website cho phát triển và thiết kế web'}
+        />
         <link
           rel="shortcut icon"
           href="/assets/favicon.png"

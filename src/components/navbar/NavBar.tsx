@@ -327,9 +327,10 @@ function Footer({
       noWrap>
       <Avatar
         src={userAvatar}
+        alt={userFullname}
         size="sm"
         radius="xl"
-        aria-label="user avatar"
+        aria-label="avatar"
       />
       <Stack
         spacing={0}
