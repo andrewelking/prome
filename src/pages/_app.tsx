@@ -4,7 +4,14 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { useState, type ReactElement, type ReactNode, createContext, Dispatch, SetStateAction } from 'react';
+import {
+  useState,
+  type ReactElement,
+  type ReactNode,
+  createContext,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 
@@ -28,7 +35,10 @@ const RouterTransition = dynamic(
   { ssr: false }
 );
 
-export const NavbarContext = createContext<{ isOpened: boolean; setIsOpened: Dispatch<SetStateAction<boolean>> }>({ isOpened: true, setIsOpened: () => {}})
+export const NavbarContext = createContext<{
+  isOpened: boolean;
+  setIsOpened: Dispatch<SetStateAction<boolean>>;
+}>({ isOpened: true, setIsOpened: () => {} });
 
 export default function App(props: AppPropsWithLayout) {
   const { Component, pageProps } = props;
@@ -40,7 +50,7 @@ export default function App(props: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>Prome - Tổng hợp website cho phát triển và thiết kế web</title>
+        <title>Prome</title>
         <link
           rel="shortcut icon"
           href="/assets/favicon.png"
@@ -48,6 +58,21 @@ export default function App(props: AppPropsWithLayout) {
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <meta
+          name={'og:title'}
+          title={'og:title'}
+          content={'Prome'}
+        />
+        <meta
+          name={'og:description'}
+          title={'og:description'}
+          content={'Tổng hợp website cho phát triển và thiết kế web'}
+        />
+        <meta
+          name={'og:image'}
+          title={'og:image'}
+          content={`https://prome-theus.vercel.app/assets/images/preview.png`}
         />
       </Head>
       <MantineProvider
@@ -62,7 +87,7 @@ export default function App(props: AppPropsWithLayout) {
             },
             '&::-webkit-scrollbar-thumb': {
               backgroundColor: theme.colors.dark[4],
-              borderRadius: theme.radius.lg
+              borderRadius: theme.radius.lg,
             },
             '&::-webkit-scrollbar-thumb:hover': {
               backgroundColor: theme.colors.dark[5],
@@ -79,12 +104,14 @@ export default function App(props: AppPropsWithLayout) {
         <SessionContextProvider
           supabaseClient={supabaseClient}
           initialSession={pageProps.initialSession}>
-            <NavbarContext.Provider value={{ isOpened, setIsOpened }}>{getLayout(
+          <NavbarContext.Provider value={{ isOpened, setIsOpened }}>
+            {getLayout(
               <Component
                 {...pageProps}
                 className={plusJakartaSans.className}
               />
-            )}</NavbarContext.Provider>
+            )}
+          </NavbarContext.Provider>
         </SessionContextProvider>
       </MantineProvider>
     </>

@@ -44,12 +44,19 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <meta
           name={'og:description'}
           title={'og:description'}
-          content={'Blog'}
+          content={'Không gian bàn luận'}
+        />
+        <meta
+          name={'og:image'}
+          title={'og:image'}
+          content={`https://prome-theus.vercel.app/assets/images/preview.png`}
         />
       </Head>
 
       <MainHeader links={links} />
-      <Container py={16} fluid>
+      <Container
+        py={16}
+        fluid>
         <CardsGrid>
           {posts.map((post: BlogPost) => (
             <BlogCard

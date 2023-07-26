@@ -283,6 +283,7 @@ function CardImage({ src, title }: CardImageProps) {
             src="../assets/images/404.png"
             alt="placeholder"
             width={350}
+            height={250}
           />
         }
         imageProps={{ loading: 'lazy' }}

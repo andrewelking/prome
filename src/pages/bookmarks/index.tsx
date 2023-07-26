@@ -13,6 +13,7 @@ import CardSite from '@components/card-site/CardSite';
 import Layout from '@components/layout/Layout';
 import { inconsolata } from 'public/fonts/fonts';
 import { SiteProps } from 'src/type';
+import Head from 'next/head';
 
 export const getServerSideProps = async (
   ctx: GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse }
@@ -29,8 +30,8 @@ export const getServerSideProps = async (
 };
 
 type FavoriteSitesProps = {
-  sites: SiteProps
-}
+  sites: SiteProps;
+};
 
 const IndexPage: NextPageWithLayout = (data: any) => {
   const bookmarks: any[] = [];
@@ -47,6 +48,9 @@ const IndexPage: NextPageWithLayout = (data: any) => {
 
   return (
     <>
+      <Head>
+        <title>Bookmarks</title>
+      </Head>
       <Stack mb="xl">
         <Text
           size={24}
