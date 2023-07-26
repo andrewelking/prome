@@ -212,7 +212,7 @@ export default function NavBar({ opened }: { opened: boolean }) {
             style={iconStyle}
           />
           {isOpened ? (
-            <Text className={textClassName}>{category.label}</Text>
+            <Text className={textClassName} truncate>{category.label}</Text>
           ) : null}
         </Group>
       </Link>
