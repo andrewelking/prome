@@ -1,11 +1,11 @@
 import { Center, Group, Loader, Stack, Text, TextInput } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
-import { NextPageWithLayout } from '../_app';
+import { NavbarContext, NextPageWithLayout } from '../_app';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { ChangeEvent, ReactElement, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, ReactElement, useContext, useEffect, useMemo, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { ParsedUrlQuery } from 'querystring';
 import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
@@ -59,6 +59,8 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[]; slug: string }> = ({
   slug: string;
 }) => {
   const { classes } = useStyles();
+
+  const { isOpened } = useContext(NavbarContext);
 
   const router = useRouter();
 
@@ -134,6 +136,8 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[]; slug: string }> = ({
     setHasMore(sites.length >= PAGE_COUNT);
   }, [router.query.slug, sites]);
 
+  console.log(isOpened)
+
   return (
     <>
       <Head>
@@ -144,7 +148,7 @@ const IndexPage: NextPageWithLayout<{ sites: SiteProps[]; slug: string }> = ({
         h="100%">
         <Group
           position="apart"
-          className={classes.group}>
+          className={isOpened ? classes.group : classes.groupWithoutNavbar}>
           <Text
             size={24}
             fw={700}
